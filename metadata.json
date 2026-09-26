@@ -1,0 +1,6 @@
+{
+  "name": "VELANT — Premium Streetwear",
+  "description": "Better Fits Bigger Dreams. Premium modern streetwear and lifestyle essentials designed for comfort and built for your journey.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
