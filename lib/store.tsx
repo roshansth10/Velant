@@ -144,10 +144,53 @@ export function ShopProvider({ children }: { children: React.ReactNode }) {
         if (savedAdmin) setIsAdmin(JSON.parse(savedAdmin));
 
         const savedOrders = localStorage.getItem('velant_orders');
-        if (savedOrders) setOrders(JSON.parse(savedOrders));
+        if (savedOrders) {
+          try {
+            const parsedOrders: Order[] = JSON.parse(savedOrders);
+            const hasUnsplash = parsedOrders.some((o) =>
+              o.items.some((item) => item.image?.includes('unsplash.com'))
+            );
+            if (hasUnsplash) {
+              setOrders(INITIAL_ORDERS);
+              localStorage.setItem('velant_orders', JSON.stringify(INITIAL_ORDERS));
+            } else {
+              setOrders(parsedOrders);
+            }
+          } catch {
+            setOrders(INITIAL_ORDERS);
+          }
+        }
 
         const savedProducts = localStorage.getItem('velant_products');
-        if (savedProducts) setProducts(JSON.parse(savedProducts));
+        if (savedProducts) {
+          try {
+            const parsed: Product[] = JSON.parse(savedProducts);
+            const hasUnsplash = parsed.some((p) =>
+              p.images?.some((img) => img.includes('unsplash.com'))
+            );
+            if (hasUnsplash) {
+              setProducts(INITIAL_PRODUCTS);
+              localStorage.setItem('velant_products', JSON.stringify(INITIAL_PRODUCTS));
+            } else {
+              const updated = parsed.map((p) => {
+                const initMatch = INITIAL_PRODUCTS.find((ip) => ip.id === p.id);
+                if (initMatch) {
+                  return {
+                    ...p,
+                    name: initMatch.name,
+                    images: initMatch.images,
+                    description: initMatch.description,
+                  };
+                }
+                return p;
+              });
+              setProducts(updated);
+              localStorage.setItem('velant_products', JSON.stringify(updated));
+            }
+          } catch {
+            setProducts(INITIAL_PRODUCTS);
+          }
+        }
       } catch {
         // ignore storage parsing error
       }

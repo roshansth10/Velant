@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { CartDrawer } from '@/components/cart/CartDrawer';
 import { SearchOverlay } from '@/components/layout/SearchOverlay';
+import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider';
 
 export const metadata: Metadata = {
   title: 'VELANT — Premium Streetwear | Better Fits Bigger Dreams',
@@ -26,14 +27,16 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body suppressHydrationWarning className="bg-[#0a0a0a] text-neutral-100 antialiased selection:bg-white selection:text-black">
         <ShopProvider>
-          <Navbar />
-          <main className="min-h-screen flex flex-col">{children}</main>
-          <Footer />
-          <CartDrawer />
-          <SearchOverlay />
+          <SmoothScrollProvider>
+            <Navbar />
+            <main className="min-h-screen flex flex-col">{children}</main>
+            <Footer />
+            <CartDrawer />
+            <SearchOverlay />
+          </SmoothScrollProvider>
         </ShopProvider>
       </body>
     </html>
