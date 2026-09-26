@@ -21,32 +21,34 @@ export function NewsletterSection() {
     setTimeout(() => {
       setIsLoading(false);
       setIsSubscribed(true);
-      showToast('Welcome to the VELANT movement. Check your inbox for 10% off code!');
+      showToast('Welcome to VELANT Kathmandu movement. Check your inbox for 10% off code!');
     }, 600);
   };
 
   return (
     <section className="relative w-full py-24 sm:py-32 bg-[#0c0c0c] text-white overflow-hidden">
-      {/* Heavy textured knit / woven cotton fabric background matching reference */}
+      {/* Nepalese model fabric backdrop */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=2000&q=85"
+          src="/images/nepal_model_graphic_tee.jpg"
           alt="Textured Fabric Backdrop"
           fill
           sizes="100vw"
-          className="object-cover object-center filter brightness-[0.35] contrast-[1.2]"
-          referrerPolicy="no-referrer"
+          className="object-cover object-center filter brightness-[0.25] contrast-[1.2]"
         />
         <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]" />
       </div>
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 sm:px-8 text-center space-y-8">
         <div className="space-y-3">
+          <span className="text-xs font-mono uppercase tracking-[0.25em] text-neutral-400 block">
+            KATHMANDU INNER CIRCLE • काठमाडौँ
+          </span>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
             Join the Movement
           </h2>
           <p className="text-neutral-300 text-sm sm:text-base font-light max-w-md mx-auto">
-            Be the first to know about new drops, exclusive offers and more.
+            Be the first in Nepal to access limited drops, secret pop-ups, and cultural dispatches.
           </p>
         </div>
 
@@ -80,7 +82,7 @@ export function NewsletterSection() {
         )}
 
         <p className="text-[11px] font-mono text-neutral-500 uppercase tracking-widest">
-          No spam. Only high-caliber drops and cultural dispatches.
+          No spam. Only high-caliber drops and cultural dispatches from Kathmandu.
         </p>
       </div>
     </section>

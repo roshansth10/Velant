@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowRight, Play, ChevronDown, ChevronLeft, ChevronRight, X } from 'lucide-react';
-import { useShop } from '@/lib/store';
 import gsap from 'gsap';
 
 export function HeroSection() {
@@ -16,29 +15,29 @@ export function HeroSection() {
   const slides = [
     {
       id: '01',
-      counter: '01 / 04',
-      tagline: 'PREMIUM STREETWEAR',
+      counter: '01 / 02',
+      tagline: 'NEPALESE PREMIUM STREETWEAR • काठमाडौँ',
       titleLine1: 'Better',
       titleLine2: 'Fits',
       titleLine3: 'Bigger',
       titleLine4: 'Dreams.',
       subtitle:
-        'Modern essentials for the ones who move different. Designed for comfort. Built for your journey.',
-      ctaText: 'Shop Now',
+        'Modern Himalayan essentials for the ones who move different. Designed for comfort in Kathmandu. Built for your journey.',
+      ctaText: 'Shop Collection',
       ctaLink: '/shop',
-      image: '/images/nepal_model_hero.jpg',
+      image: '/images/nepal_model_hoodie.jpg',
       hasVideo: false,
     },
     {
       id: '02',
-      counter: '02 / 04',
-      tagline: 'SPRING / SUMMER 2026',
+      counter: '02 / 02',
+      tagline: 'KATHMANDU UNDERGROUND • S/S 2026',
       titleLine1: 'The Next',
-      titleLine2: 'Chapter',
-      titleLine3: '',
+      titleLine2: 'Himalayan',
+      titleLine3: 'Chapter.',
       titleLine4: '',
       subtitle:
-        "New season. Same vision. Explore the latest collection designed for what's ahead.",
+        "New season. Authentic Nepalese identity. Explore the heavyweight collection engineered for Kathmandu streets.",
       ctaText: 'Explore Collection',
       ctaLink: '/collections/new-arrivals',
       image: '/images/nepal_model_street.jpg',
@@ -91,8 +90,7 @@ export function HeroSection() {
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_35%] filter brightness-[0.72] contrast-[1.08] transition-opacity duration-1000 ease-in-out"
-          referrerPolicy="no-referrer"
+          className="object-cover object-[center_35%] filter brightness-[0.75] contrast-[1.08] transition-opacity duration-1000 ease-in-out"
         />
         {/* Layered cinematic vignettes matching reference */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/40 to-black/20" />
@@ -139,7 +137,7 @@ export function HeroSection() {
               <ArrowRight className="w-4 h-4" />
             </Link>
 
-            {/* Watch Film CTA (Visible in Slide 2 / Spring Summer 2026 in reference) */}
+            {/* Watch Film CTA */}
             {current.hasVideo && (
               <button
                 onClick={() => setIsVideoModalOpen(true)}
@@ -157,7 +155,7 @@ export function HeroSection() {
 
       {/* Bottom Bar matching reference */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full pb-8 flex items-center justify-between text-xs font-mono text-neutral-400">
-        {/* Slide Counter & Switcher: "01 / 04" or "02 / 04" */}
+        {/* Slide Counter & Switcher */}
         <div className="flex items-center gap-4">
           <span className="text-white font-medium tracking-wider">{current.counter}</span>
           <div className="w-16 sm:w-24 h-[2px] bg-neutral-800 rounded-full overflow-hidden">
@@ -184,7 +182,7 @@ export function HeroSection() {
           </div>
         </div>
 
-        {/* Rotated "Scroll ∨" indicator matching reference bottom right */}
+        {/* Scroll indicator */}
         <button
           onClick={scrollToNextSection}
           className="flex items-center gap-2 text-neutral-400 hover:text-white transition-colors group"
@@ -200,7 +198,7 @@ export function HeroSection() {
           <div className="relative w-full max-w-4xl bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden shadow-2xl">
             <div className="p-4 border-b border-neutral-800 flex items-center justify-between">
               <span className="text-xs font-mono uppercase tracking-widest text-neutral-400">
-                VELANT — S/S 2026 CAMPAIGN FILM
+                VELANT — KATHMANDU CAMPAIGN FILM
               </span>
               <button
                 onClick={() => setIsVideoModalOpen(false)}
@@ -211,11 +209,10 @@ export function HeroSection() {
             </div>
             <div className="relative aspect-video w-full bg-black flex items-center justify-center">
               <Image
-                src="https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=1600&q=85"
+                src="/images/nepal_model_street.jpg"
                 alt="Film Poster"
                 fill
                 className="object-cover opacity-60"
-                referrerPolicy="no-referrer"
               />
               <div className="relative z-10 text-center space-y-3 p-6">
                 <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md border border-white/50 flex items-center justify-center mx-auto">

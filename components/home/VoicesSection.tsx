@@ -18,20 +18,18 @@ export function VoicesSection() {
     setCurrentIndex((prev) => (prev + 1) % VOICES.length);
   };
 
-  const bgImage =
-    'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=2000&q=85';
+  const bgImage = '/images/nepal_model_hoodie.jpg';
 
   return (
     <section className="relative w-full min-h-[460px] sm:min-h-[520px] flex items-center bg-black text-white overflow-hidden py-20">
-      {/* Background Image: Silhouetted hooded figure against mountain ridge matching reference */}
+      {/* Background Image: Nepalese streetwear model */}
       <div className="absolute inset-0 z-0">
         <Image
           src={bgImage}
-          alt="Atmospheric Mountain Silhouette"
+          alt="Atmospheric Himalayan Silhouette"
           fill
           sizes="100vw"
           className="object-cover object-[center_60%] filter brightness-[0.45] contrast-[1.1]"
-          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-black/90" />
       </div>
@@ -41,7 +39,7 @@ export function VoicesSection() {
           {/* Left Title Column matching reference */}
           <div className="lg:col-span-4 space-y-2">
             <span className="text-xs uppercase tracking-[0.25em] font-mono text-neutral-400 font-medium">
-              VOICES
+              VOICES • काठमाडौँ
             </span>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white leading-tight">
               What Our <br className="hidden sm:inline" />

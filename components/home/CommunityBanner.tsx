@@ -6,8 +6,7 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export function CommunityBanner() {
-  const communityImage =
-    'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=2000&q=90';
+  const communityImage = '/images/nepal_model_female_street.jpg';
 
   return (
     <section className="relative w-full min-h-[480px] sm:min-h-[560px] lg:min-h-[640px] flex items-center bg-black text-white overflow-hidden">
@@ -15,26 +14,28 @@ export function CommunityBanner() {
       <div className="absolute inset-0 z-0">
         <Image
           src={communityImage}
-          alt="Velant Community Movement"
+          alt="Velant Nepalese Streetwear Community"
           fill
           sizes="100vw"
           className="object-cover object-[center_40%] filter brightness-[0.78] contrast-[1.05]"
-          referrerPolicy="no-referrer"
         />
         {/* Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/40 to-black/80" />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/50 to-black/85" />
       </div>
 
       {/* Content Container */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-16 flex justify-end">
-        <div className="max-w-lg bg-black/60 backdrop-blur-md border border-white/10 p-8 sm:p-10 rounded-sm space-y-5">
+        <div className="max-w-lg bg-black/70 backdrop-blur-md border border-white/10 p-8 sm:p-10 rounded-sm space-y-5">
+          <span className="text-xs uppercase tracking-[0.25em] font-mono text-neutral-400 font-medium block">
+            KATHMANDU STREET CULTURE • काठमाडौँ
+          </span>
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white leading-tight">
             Not Just a Brand, <br />
-            It&apos;s a Community.
+            It&apos;s a Himalayan Movement.
           </h2>
 
           <p className="text-neutral-300 text-sm sm:text-base font-light leading-relaxed">
-            Join a movement of people who believe in self-expression, creativity and progress.
+            Join thousands of creators across Nepal redefining South Asian urban self-expression, music, and streetwear craftsmanship.
           </p>
 
           <div className="pt-2 flex items-center gap-4">

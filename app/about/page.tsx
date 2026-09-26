@@ -3,18 +3,14 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowRight, Download, Compass, ShieldCheck, Feather, Globe } from 'lucide-react';
+import { ArrowRight, Download, Compass, ShieldCheck, Feather } from 'lucide-react';
 import { useShop } from '@/lib/store';
 
 export default function AboutPage() {
   const { downloadImage } = useShop();
 
-  const heroImage =
-    'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=2000&q=90';
-  const fabricImage =
-    'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=85';
-  const cityImage =
-    'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=85';
+  const heroImage = '/images/nepal_model_hoodie.jpg';
+  const cityImage = '/images/nepal_model_female_street.jpg';
 
   return (
     <div className="pt-24 sm:pt-28 pb-24 bg-[#0a0a0a] text-white min-h-screen">
@@ -23,12 +19,11 @@ export default function AboutPage() {
         <div className="absolute inset-0 z-0">
           <Image
             src={heroImage}
-            alt="Velant Origins"
+            alt="Velant Kathmandu Origins"
             fill
             priority
             sizes="100vw"
             className="object-cover object-[center_30%] filter brightness-[0.55] contrast-[1.1]"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/40 to-black/70" />
         </div>
@@ -36,14 +31,14 @@ export default function AboutPage() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="max-w-2xl space-y-4">
             <span className="text-xs uppercase tracking-[0.25em] font-mono text-neutral-300 font-medium">
-              BRAND PHILOSOPHY & CRAFT
+              BRAND PHILOSOPHY & CRAFT • काठमाडौँ
             </span>
             <h1 className="text-4xl sm:text-6xl font-bold tracking-tight text-white leading-[1.05]">
               More Than Just Clothes.
             </h1>
             <p className="text-neutral-300 text-base sm:text-lg font-light leading-relaxed">
               VELANT was founded in Kathmandu with a simple mission: create streetwear that honors
-              personal ambition, effortless comfort, and architectural proportions.
+              Himalayan ambition, effortless comfort, and architectural proportions.
             </p>
 
             <div className="pt-3">
@@ -64,7 +59,7 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 space-y-6">
             <span className="text-xs font-mono uppercase tracking-[0.25em] text-neutral-400">
-              OUR CREED
+              OUR CREED • काठमाडौँ
             </span>
             <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white leading-tight">
               Same Dreams. <br />
@@ -72,11 +67,11 @@ export default function AboutPage() {
             </h2>
             <p className="text-neutral-300 text-base font-light leading-relaxed">
               Whether you are an engineer writing code late at night in Patan, a visual artist
-              painting murals across Thamel, an athlete training in the valleys, or a dreamer charting
+              painting murals across Thamel, an athlete training in Pokhara valleys, or a dreamer charting
               an uncharted career, VELANT is designed to move with your ambition.
             </p>
             <p className="text-neutral-400 text-sm font-light leading-relaxed">
-              Every drop is numbered and produced in controlled batches. We avoid wasteful fast-fashion
+              Every drop is numbered and produced in controlled batches right here in Nepal. We avoid wasteful fast-fashion
               cycles and focus exclusively on timeless silhouettes that last for years.
             </p>
           </div>
@@ -85,14 +80,13 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] w-full max-w-md rounded-sm overflow-hidden border border-neutral-800 shadow-2xl">
               <Image
                 src={cityImage}
-                alt="Kathmandu City Skyline with Streetwear Model"
+                alt="Kathmandu Streetwear Model in Jhamsikhel"
                 fill
                 sizes="(max-width: 768px) 100vw, 500px"
                 className="object-cover"
-                referrerPolicy="no-referrer"
               />
               <button
-                onClick={() => downloadImage(cityImage, 'velant-kathmandu-skyline.jpg')}
+                onClick={() => downloadImage(cityImage, 'velant-kathmandu-street.jpg')}
                 className="absolute bottom-3 right-3 p-2 rounded-full bg-black/70 hover:bg-black text-white backdrop-blur-sm border border-neutral-700"
                 title="Download asset"
               >
@@ -113,7 +107,7 @@ export default function AboutPage() {
             Obsessive Attention to Detail
           </h2>
           <p className="text-neutral-400 text-sm font-light">
-            We spent nine months perfecting our custom fabric weights and collar elasticities.
+            We spent nine months perfecting our custom fabric weights and collar elasticities in Kathmandu.
           </p>
         </div>
 

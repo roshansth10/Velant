@@ -6,30 +6,29 @@ import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
 
 export function OurStorySection() {
-  const mainStoryImage = '/images/nepal_model_tee.jpg';
-  const overlayStoryImage = '/images/nepal_model_hero.jpg';
+  const mainStoryImage = '/images/nepal_model_graphic_tee.jpg';
+  const overlayStoryImage = '/images/nepal_model_hoodie.jpg';
 
   return (
     <section id="our-story" className="py-24 sm:py-32 bg-[#eeece7] text-neutral-900 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Column: Story Copy matching reference */}
+          {/* Left Column: Story Copy */}
           <div className="lg:col-span-5 space-y-6">
             <div className="flex items-center gap-2">
               <span className="w-1.5 h-1.5 rounded-full bg-neutral-900" />
               <span className="text-xs uppercase tracking-[0.25em] font-mono text-neutral-600 font-medium">
-                OUR STORY
+                OUR STORY • काठमाडौँ
               </span>
             </div>
 
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-neutral-900 leading-[1.05]">
-              More Than <br />
-              Just Clothes.
+              Himalayan <br />
+              Streetwear Identity.
             </h2>
 
             <p className="text-neutral-700 text-base sm:text-lg font-light leading-relaxed max-w-md">
-              VELANT is a lifestyle brand built for dreamers, creators and go-getters. We blend comfort,
-              quality and timeless design to give you pieces that move with your ambition.
+              Born in Kathmandu, VELANT is a lifestyle movement built for Nepalese dreamers, creators, and go-getters. We fuse Himalayan heritage, modern boxy silhouettes, and heavyweight fabrics crafted for urban movement.
             </p>
 
             <div className="pt-2 flex items-center gap-4">
@@ -37,39 +36,37 @@ export function OurStorySection() {
                 href="/about"
                 className="inline-flex items-center gap-2.5 px-7 py-3.5 bg-neutral-900 text-white hover:bg-neutral-800 text-xs sm:text-sm font-medium tracking-wide uppercase rounded-full transition-all duration-300 hover:scale-105 shadow-md"
               >
-                <span>Our Story</span>
+                <span>Read Full Story</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </div>
 
-          {/* Right Column: Layered Editorial Collage matching reference */}
+          {/* Right Column: Layered Editorial Collage */}
           <div className="lg:col-span-7 relative flex justify-center lg:justify-end">
             <div className="relative w-full max-w-md lg:max-w-lg">
-              {/* Main Vertical Photo (Model in black hoodie back view) */}
+              {/* Main Vertical Photo */}
               <div className="relative aspect-[3/4] w-[82%] bg-neutral-300 rounded-sm overflow-hidden shadow-2xl">
                 <Image
                   src={mainStoryImage}
-                  alt="Velant Streetwear Silhouette"
+                  alt="Nepalese Model in Streetwear T-shirt"
                   fill
                   sizes="(max-width: 768px) 90vw, 500px"
                   className="object-cover object-center filter contrast-[1.05]"
-                  referrerPolicy="no-referrer"
                 />
               </div>
 
-              {/* Overlapping Bottom-Right Photo (Model in white graphic tee with city backdrop) */}
+              {/* Overlapping Bottom-Right Photo */}
               <div className="absolute -bottom-8 right-0 w-[55%] aspect-[4/5] bg-neutral-200 rounded-sm overflow-hidden shadow-2xl border-4 border-[#eeece7]">
                 <Image
                   src={overlayStoryImage}
-                  alt="Kathmandu Urban Horizon Tee"
+                  alt="Kathmandu Urban Streetwear Hoodie"
                   fill
                   sizes="(max-width: 768px) 50vw, 300px"
                   className="object-cover object-center"
-                  referrerPolicy="no-referrer"
                 />
 
-                {/* Barcode Stamp at bottom left of secondary photo matching reference */}
+                {/* Barcode Stamp at bottom left of secondary photo */}
                 <div className="absolute bottom-2 left-2 bg-white/95 px-2 py-1 flex flex-col items-center shadow-sm">
                   {/* Stylized Barcode SVG */}
                   <svg className="w-16 h-5" viewBox="0 0 100 30" fill="currentColor">
@@ -89,12 +86,12 @@ export function OurStorySection() {
                     <rect x="91" y="0" width="5" height="24" />
                   </svg>
                   <span className="text-[7px] font-mono tracking-widest text-neutral-800 uppercase">
-                    VLNT-2026-NP
+                    VLNT-2026-KTM
                   </span>
                 </div>
               </div>
 
-              {/* Handwritten Script Accent: "Same Dreams Different Paths." */}
+              {/* Handwritten Script Accent */}
               <div className="absolute top-8 right-2 sm:-right-4 transform rotate-6 z-20 pointer-events-none">
                 <span className="font-serif italic font-normal text-2xl sm:text-3xl text-neutral-800 drop-shadow-sm whitespace-nowrap">
                   Same Dreams <br />

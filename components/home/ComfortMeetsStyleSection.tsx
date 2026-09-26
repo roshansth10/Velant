@@ -5,8 +5,7 @@ import Image from 'next/image';
 import { Wind, Feather, Recycle } from 'lucide-react';
 
 export function ComfortMeetsStyleSection() {
-  const comfortImage =
-    'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1200&q=85';
+  const comfortImage = '/images/nepal_model_female_street.jpg';
 
   return (
     <section className="relative py-24 sm:py-32 bg-[#121212] text-white overflow-hidden">
@@ -26,27 +25,26 @@ export function ComfortMeetsStyleSection() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left: Model Photo in White Tee + Sling matching reference */}
+          {/* Left: Nepalese Model Photo */}
           <div className="lg:col-span-6 relative flex justify-center lg:justify-start">
             <div className="relative aspect-[3/4] w-full max-w-md bg-neutral-900 rounded-sm overflow-hidden shadow-2xl border border-neutral-800 group">
               <Image
                 src={comfortImage}
-                alt="Model in White Oversized Tee with Sling"
+                alt="Nepalese Model in Streetwear"
                 fill
                 sizes="(max-width: 768px) 90vw, 450px"
                 className="object-cover object-center group-hover:scale-105 transition-transform duration-700"
-                referrerPolicy="no-referrer"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60" />
             </div>
           </div>
 
-          {/* Right: Technical Specs & Quality Pillars matching reference */}
+          {/* Right: Technical Specs & Quality Pillars */}
           <div className="lg:col-span-6 space-y-10">
-            {/* Mobile / Tablet visible headline */}
+            {/* Headline */}
             <div className="space-y-3">
               <span className="text-xs uppercase tracking-[0.25em] font-mono text-neutral-400 font-medium">
-                ENGINEERED FOR MOVEMENT
+                ENGINEERED FOR HIMALAYAN MOVEMENT • काठमाडौँ
               </span>
               <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white uppercase leading-[1.05]">
                 Comfort Meets Style
@@ -55,7 +53,7 @@ export function ComfortMeetsStyleSection() {
 
             <div className="space-y-6">
               <span className="text-xs font-mono uppercase tracking-[0.2em] text-neutral-400 block border-b border-neutral-800 pb-3">
-                PREMIUM QUALITY
+                PREMIUM QUALITY • NEPALESE CRAFTSMANSHIP
               </span>
 
               {/* Pillar 1: Breathable Fabrics */}
@@ -64,8 +62,8 @@ export function ComfortMeetsStyleSection() {
                   <Wind className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-white tracking-tight">Breathable Fabrics</h3>
-                  <p className="text-sm text-neutral-400 font-light mt-0.5">Stay fresh, all day.</p>
+                  <h3 className="text-base font-medium text-white tracking-tight">Breathable Heavyweight Fabrics</h3>
+                  <p className="text-sm text-neutral-400 font-light mt-0.5">Custom 280-500 GSM French Terry for elevation changes.</p>
                 </div>
               </div>
 
@@ -75,8 +73,8 @@ export function ComfortMeetsStyleSection() {
                   <Feather className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-white tracking-tight">Durable Stitching</h3>
-                  <p className="text-sm text-neutral-400 font-light mt-0.5">Made to last.</p>
+                  <h3 className="text-base font-medium text-white tracking-tight">Reinforced Double-Stitching</h3>
+                  <p className="text-sm text-neutral-400 font-light mt-0.5">Built to endure daily urban Kathmandu exploration.</p>
                 </div>
               </div>
 
@@ -86,8 +84,8 @@ export function ComfortMeetsStyleSection() {
                   <Recycle className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-base font-medium text-white tracking-tight">Sustainable Production</h3>
-                  <p className="text-sm text-neutral-400 font-light mt-0.5">Better for tomorrow.</p>
+                  <h3 className="text-base font-medium text-white tracking-tight">Ethical Nepalese Production</h3>
+                  <p className="text-sm text-neutral-400 font-light mt-0.5">Handcrafted in local workshops with zero-plastic packaging.</p>
                 </div>
               </div>
             </div>

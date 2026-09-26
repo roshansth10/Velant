@@ -11,32 +11,28 @@ export function CategorySection() {
       id: 'hoodies',
       name: 'Hoodies',
       href: '/collections/hoodies',
-      image:
-        'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=85',
+      image: '/images/nepal_model_hoodie.jpg',
       count: '14 Styles',
     },
     {
       id: 't-shirts',
       name: 'T-Shirts',
       href: '/collections/tshirts',
-      image:
-        'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=1000&q=85',
+      image: '/images/nepal_model_graphic_tee.jpg',
       count: '22 Styles',
     },
     {
       id: 'bottoms',
       name: 'Bottoms',
       href: '/collections/bottoms',
-      image:
-        'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=1000&q=85',
+      image: '/images/nepal_model_female_jacket.jpg',
       count: '12 Styles',
     },
     {
       id: 'accessories',
       name: 'Accessories',
       href: '/collections/accessories',
-      image:
-        'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=1000&q=85',
+      image: '/images/nepal_model_cap.jpg',
       count: '16 Styles',
     },
   ];
@@ -47,7 +43,7 @@ export function CategorySection() {
         {/* Header matching reference */}
         <div className="mb-12 sm:mb-16 space-y-2">
           <span className="text-xs uppercase tracking-[0.25em] font-mono text-neutral-400 font-medium">
-            SHOP BY CATEGORY
+            SHOP BY CATEGORY • काठमाडौँ
           </span>
           <h2 className="text-3xl sm:text-5xl font-bold tracking-tight text-white">
             Find Your Essentials
@@ -68,7 +64,6 @@ export function CategorySection() {
                   fill
                   sizes="(max-width: 640px) 50vw, (max-width: 1024px) 25vw, 300px"
                   className="object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
-                  referrerPolicy="no-referrer"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-40 group-hover:opacity-60 transition-opacity" />
               </Link>

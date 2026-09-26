@@ -100,8 +100,8 @@ export function Footer() {
               className="inline-flex items-center justify-center transition-transform duration-200 hover:scale-105 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-neutral-500 rounded"
             >
               <Image
-                src="/images/logo1.png"
-                alt="Developed by logo"
+                src="/images/dx-studio-white.png"
+                alt="DX Creative Studio Logo"
                 width={140}
                 height={42}
                 className="h-10 w-auto object-contain"

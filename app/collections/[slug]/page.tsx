@@ -3,7 +3,6 @@
 import React, { use } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { notFound } from 'next/navigation';
 import { ArrowLeft, Download } from 'lucide-react';
 import { useShop } from '@/lib/store';
 import { ProductCard } from '@/components/products/ProductCard';
@@ -19,58 +18,58 @@ interface CollectionMeta {
 const COLLECTIONS_MAP: Record<string, CollectionMeta> = {
   'new-arrivals': {
     title: 'New Arrivals',
-    subtitle: 'DROP 01 / S/S 2025',
-    description: 'The latest drops crafted from custom 480 GSM French Terry and preshrunk combed cotton.',
-    image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=2000&q=90',
+    subtitle: 'DROP 01 / S/S 2026 • काठमाडौँ',
+    description: 'The latest drops crafted in Nepal from custom 480 GSM French Terry and preshrunk combed cotton.',
+    image: '/images/nepal_model_hoodie.jpg',
     filterFn: (p) => p.newArrival || p.badge === 'New',
   },
   hoodies: {
     title: 'Hoodies & Sweats',
     subtitle: '480 GSM HEAVYWEIGHT FLEECE',
     description: 'Double-layered ergonomic hoods without drawstrings, dropped shoulders, and structural drape.',
-    image: 'https://images.unsplash.com/photo-1509967419530-da38b4704bc6?auto=format&fit=crop&w=2000&q=90',
+    image: '/images/nepal_model_hoodie.jpg',
     filterFn: (p) => p.category === 'hoodies',
   },
   tshirts: {
     title: 'T-Shirts & Tees',
     subtitle: '280 GSM COMBED JERSEY',
     description: 'Boxy streetwear silhouettes with snug 1.25-inch ribbed collars that retain shape forever.',
-    image: 'https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=2000&q=90',
+    image: '/images/nepal_model_graphic_tee.jpg',
     filterFn: (p) => p.category === 't-shirts',
   },
   bottoms: {
     title: 'Bottoms & Cargos',
     subtitle: 'ARTICULATED TECHNICAL TAILORING',
     description: 'Ripstop cargo pants with adjustable bungee ankle cuffs, magnetic enclosures, and tactical versatility.',
-    image: 'https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?auto=format&fit=crop&w=2000&q=90',
+    image: '/images/nepal_model_female_jacket.jpg',
     filterFn: (p) => p.category === 'bottoms',
   },
   accessories: {
     title: 'Accessories & Headwear',
     subtitle: 'TACTICAL ACCENTS',
-    description: 'Low-profile 3D embroidered baseball dad caps, Cordura ballistic slings, and lifestyle accents.',
-    image: 'https://images.unsplash.com/photo-1588850561407-ed78c282e89b?auto=format&fit=crop&w=2000&q=90',
+    description: 'Low-profile 3D embroidered baseball caps, silver accessories, and lifestyle accents.',
+    image: '/images/nepal_model_cap.jpg',
     filterFn: (p) => p.category === 'accessories',
   },
   men: {
     title: "Men's Collection",
     subtitle: 'URBAN ESSENTIALS',
     description: 'Engineered for daily urban movement in Kathmandu, Pokhara, and beyond.',
-    image: 'https://images.unsplash.com/photo-1517445312882-bc9910d016b7?auto=format&fit=crop&w=2000&q=90',
+    image: '/images/nepal_model_graphic_tee.jpg',
     filterFn: (p) => p.gender === 'men' || p.gender === 'unisex',
   },
   women: {
     title: "Women's Collection",
     subtitle: 'RELAXED PROPORTIONS',
     description: 'Fluid streetwear silhouettes and relaxed essential cuts tailored for bold modern stylings.',
-    image: 'https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=2000&q=90',
+    image: '/images/nepal_model_female_street.jpg',
     filterFn: (p) => p.gender === 'women' || p.gender === 'unisex',
   },
   unisex: {
     title: 'Unisex Essentials',
     subtitle: 'BORDERLESS SILHOUETTES',
-    description: 'Designed for everybody who moves different. Better Fits Bigger Dreams.',
-    image: 'https://images.unsplash.com/photo-1578587018452-892bacefd3f2?auto=format&fit=crop&w=2000&q=90',
+    description: 'Designed for everybody who moves different in Nepal. Better Fits Bigger Dreams.',
+    image: '/images/nepal_model_street.jpg',
     filterFn: (p) => p.gender === 'unisex',
   },
 };
@@ -85,9 +84,9 @@ export default function CollectionPage({
 
   const collection = COLLECTIONS_MAP[slug] || {
     title: slug.replace('-', ' ').toUpperCase(),
-    subtitle: 'VELANT COLLECTION',
-    description: 'Discover the latest releases and curated streetwear drops.',
-    image: 'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=2000&q=90',
+    subtitle: 'VELANT COLLECTION • NEPAL',
+    description: 'Discover the latest releases and curated Kathmandu streetwear drops.',
+    image: '/images/nepal_model_hoodie.jpg',
     filterFn: () => true,
   };
 
@@ -105,7 +104,6 @@ export default function CollectionPage({
             priority
             sizes="100vw"
             className="object-cover object-[center_35%] filter brightness-[0.55] contrast-[1.1]"
-            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-black/40 to-black/60" />
         </div>

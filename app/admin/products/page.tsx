@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { Plus, Trash2, Edit3, Search, Check, X } from 'lucide-react';
+import { Plus, Trash2, Search, X } from 'lucide-react';
 import { useShop } from '@/lib/store';
 import { AdminNav } from '@/components/admin/AdminNav';
 
@@ -57,16 +57,16 @@ export default function AdminProductsPage() {
       reviewCount: 1,
       gender: 'unisex' as const,
       images: [
-        'https://images.unsplash.com/photo-1556905055-8f358a7a47b2?auto=format&fit=crop&w=1000&q=85',
+        '/images/nepal_model_hoodie.jpg',
       ],
       colors: [{ name: 'Onyx Black', hex: '#111111', inStock: true }],
       sizes: ['S', 'M', 'L', 'XL'],
-      description: 'Engineered high-density streetwear drop piece.',
+      description: 'Engineered high-density streetwear drop piece made in Kathmandu.',
       fabric,
       fit: 'Relaxed Oversized Dropped Silhouette',
       features: ['Pre-shrunk', 'Reinforced double-stitch seams'],
       care: ['Machine wash cold', 'Hang dry inside out'],
-      tags: ['Streetwear', 'Drop 01'],
+      tags: ['Streetwear', 'Drop 01', 'Nepal'],
     };
 
     addProduct(newP);
@@ -83,7 +83,7 @@ export default function AdminProductsPage() {
         <div className="flex flex-col sm:flex-row justify-between sm:items-end gap-4 border-b border-neutral-800 pb-6 mb-8">
           <div>
             <span className="text-xs uppercase tracking-[0.25em] font-mono text-neutral-400 font-medium">
-              CATALOGUE MANAGEMENT
+              CATALOGUE MANAGEMENT • KATHMANDU
             </span>
             <h1 className="text-3xl font-bold tracking-tight text-white mt-1">
               Inventory & Products ({products.length})
@@ -138,7 +138,6 @@ export default function AdminProductsPage() {
                           fill
                           className="object-cover"
                           sizes="50px"
-                          referrerPolicy="no-referrer"
                         />
                       </div>
                       <div>
