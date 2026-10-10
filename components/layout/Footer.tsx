@@ -38,12 +38,6 @@ export function Footer() {
             >
               Contact
             </Link>
-            <Link
-              href="/admin/login"
-              className="hover:text-neutral-200 transition-colors text-neutral-500"
-            >
-              Portal
-            </Link>
           </div>
 
           {/* Social Icons: Instagram, TikTok, YouTube */}
