@@ -103,7 +103,7 @@ export function Footer() {
             </a>
           </div>
           <span className="text-neutral-500 text-[11px]">
-            Kathmandu, Nepal • High-End Digital Experience
+            Kathmandu, Nepal
           </span>
         </div>
 
