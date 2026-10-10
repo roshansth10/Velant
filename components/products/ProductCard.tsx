@@ -10,9 +10,10 @@ import { useShop } from '@/lib/store';
 interface ProductCardProps {
   product: Product;
   priority?: boolean;
+  variant?: 'light' | 'dark';
 }
 
-export function ProductCard({ product, priority = false }: ProductCardProps) {
+export function ProductCard({ product, priority = false, variant = 'dark' }: ProductCardProps) {
   const { toggleWishlist, isInWishlist, addToCart } = useShop();
   const [isHovered, setIsHovered] = useState(false);
   const [selectedSize, setSelectedSize] = useState(product.sizes[0] || 'M');
@@ -134,19 +135,47 @@ export function ProductCard({ product, priority = false }: ProductCardProps) {
       </div>
 
       {/* Info: Title & Price matching reference layout */}
-      <div className="mt-3 flex flex-col gap-0.5">
+      <div className="mt-3 flex flex-col gap-1">
+        {/* Category micro-tag for clear visual context */}
+        <span
+          style={{ color: variant === 'light' ? '#737373' : '#a3a3a3' }}
+          className={`text-[10px] sm:text-[11px] font-mono uppercase tracking-widest ${
+            variant === 'light' ? 'text-neutral-500' : 'text-neutral-400'
+          }`}
+        >
+          {product.categoryLabel}
+        </span>
+
+        {/* Product Title - High visibility, bold, 2-line clamp */}
         <Link
           href={`/shop/product/${product.slug}`}
-          className="text-sm font-normal text-neutral-900 hover:text-neutral-600 transition-colors tracking-tight line-clamp-1"
+          style={{ color: variant === 'light' ? '#111111' : '#FFFFFF' }}
+          className={`text-sm sm:text-base font-bold tracking-normal line-clamp-2 leading-snug transition-colors ${
+            variant === 'light'
+              ? 'text-neutral-900 hover:text-neutral-600 visited:text-neutral-900'
+              : 'text-white !text-white hover:text-neutral-200 visited:!text-white'
+          }`}
         >
           {product.name}
         </Link>
-        <div className="flex items-baseline gap-2">
-          <span className="text-xs sm:text-sm font-medium text-neutral-900">
+
+        {/* Price & Discount */}
+        <div className="flex items-baseline gap-2 pt-0.5">
+          <span
+            style={{ color: variant === 'light' ? '#111111' : '#FFFFFF' }}
+            className={`text-sm sm:text-base font-bold ${
+              variant === 'light' ? 'text-neutral-900' : 'text-white !text-white'
+            }`}
+          >
             Rs. {product.price.toLocaleString()}
           </span>
           {product.compareAtPrice && product.compareAtPrice > product.price && (
-            <span className="text-xs text-neutral-400 line-through">
+            <span
+              style={{ color: variant === 'light' ? '#737373' : '#a3a3a3' }}
+              className={`text-xs line-through ${
+                variant === 'light' ? 'text-neutral-500' : 'text-neutral-400'
+              }`}
+            >
               Rs. {product.compareAtPrice.toLocaleString()}
             </span>
           )}

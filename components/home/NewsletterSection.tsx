@@ -53,27 +53,27 @@ export function NewsletterSection() {
         </div>
 
         {isSubscribed ? (
-          <div className="max-w-md mx-auto p-4 bg-white/10 border border-white/20 rounded-full flex items-center justify-center gap-3 text-sm font-mono text-emerald-300">
-            <Check className="w-5 h-5" />
+          <div className="max-w-md mx-auto p-4 bg-white/10 border border-white/20 rounded-2xl sm:rounded-full flex items-center justify-center gap-3 text-sm font-mono text-emerald-300">
+            <Check className="w-5 h-5 flex-shrink-0" />
             <span>You are now subscribed to VELANT Inner Circle.</span>
           </div>
         ) : (
           <form
             onSubmit={handleSubmit}
-            className="max-w-xl mx-auto flex flex-col sm:flex-row items-center gap-2 sm:gap-0 bg-black/70 border border-white/20 rounded-full p-1.5 backdrop-blur-md shadow-2xl focus-within:border-white transition-colors"
+            className="max-w-xl mx-auto flex flex-col sm:flex-row items-center gap-3 sm:gap-0 bg-transparent sm:bg-black/70 border-0 sm:border sm:border-white/20 rounded-none sm:rounded-full sm:p-1.5 sm:backdrop-blur-md sm:shadow-2xl transition-colors sm:focus-within:border-white"
           >
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               placeholder="Enter your email address"
-              className="w-full bg-transparent px-6 py-3 text-sm text-white placeholder-neutral-500 focus:outline-none font-mono"
+              className="w-full bg-black/70 sm:bg-transparent border border-white/20 sm:border-0 rounded-full px-6 py-3.5 sm:py-3 text-base sm:text-sm text-white placeholder-neutral-500 text-center sm:text-left focus:outline-none focus:border-white sm:focus:border-transparent font-mono backdrop-blur-md transition-colors"
               required
             />
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full sm:w-auto px-7 py-3 bg-white text-black hover:bg-neutral-200 text-xs uppercase font-mono tracking-widest font-semibold rounded-full flex items-center justify-center gap-2 transition-all flex-shrink-0 disabled:opacity-50"
+              className="w-auto px-5 sm:px-6 py-2.5 sm:py-3 bg-white text-black hover:bg-neutral-200 text-xs uppercase font-mono tracking-wider sm:tracking-widest font-semibold rounded-full flex items-center justify-center gap-2 transition-all flex-shrink-0 disabled:opacity-50 shadow-lg active:scale-[0.99]"
             >
               <span>{isLoading ? 'Joining...' : 'Subscribe'}</span>
               <ArrowRight className="w-4 h-4" />

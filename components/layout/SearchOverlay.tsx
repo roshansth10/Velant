@@ -157,7 +157,8 @@ export function SearchOverlay() {
                         <Link
                           href={`/shop/product/${product.slug}`}
                           onClick={handleClose}
-                          className="text-sm font-medium text-white hover:underline line-clamp-1 mt-0.5"
+                          style={{ color: '#FFFFFF' }}
+                          className="text-sm font-bold text-white !text-white hover:underline line-clamp-2 mt-0.5"
                         >
                           {product.name}
                         </Link>

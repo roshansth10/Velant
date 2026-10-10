@@ -158,23 +158,23 @@ export default function ProductDetailPage({
     <div className="pt-28 sm:pt-36 pb-24 bg-[#0a0a0a] text-white min-h-screen">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-2 text-xs font-mono text-neutral-500 mb-8 uppercase tracking-widest">
-          <Link href="/" className="hover:text-white">
+        <nav className="flex items-center gap-2 text-xs font-mono text-neutral-300 mb-8 uppercase tracking-widest">
+          <Link href="/" className="hover:text-white transition-colors">
             Home
           </Link>
-          <span>/</span>
-          <Link href="/shop" className="hover:text-white">
+          <span className="text-neutral-500">/</span>
+          <Link href="/shop" className="hover:text-white transition-colors">
             Shop
           </Link>
-          <span>/</span>
+          <span className="text-neutral-500">/</span>
           <Link
-            href={`/collections/${product.category}`}
-            className="hover:text-white"
+            href={`/shop?category=${product.category}`}
+            className="hover:text-white transition-colors"
           >
             {product.categoryLabel}
           </Link>
-          <span>/</span>
-          <span className="text-white truncate max-w-[200px]">
+          <span className="text-neutral-500">/</span>
+          <span className="text-white font-medium truncate max-w-[200px]">
             {product.name}
           </span>
         </nav>
@@ -245,7 +245,7 @@ export default function ProductDetailPage({
           {/* Right: Purchasing Details (lg:col-span-5) */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <span className="text-xs font-mono uppercase tracking-[0.25em] text-neutral-400">
+              <span className="text-xs font-mono uppercase tracking-[0.25em] text-neutral-300">
                 {product.categoryLabel} / VELANT STREETWEAR
               </span>
               <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-white mt-1">
@@ -258,7 +258,7 @@ export default function ProductDetailPage({
                   Rs. {product.price.toLocaleString()}
                 </span>
                 {product.compareAtPrice && (
-                  <span className="text-base font-mono text-neutral-500 line-through">
+                  <span className="text-base font-mono text-neutral-400 line-through">
                     Rs. {product.compareAtPrice.toLocaleString()}
                   </span>
                 )}
@@ -271,7 +271,7 @@ export default function ProductDetailPage({
               </div>
 
               {/* Rating */}
-              <div className="flex items-center gap-2 mt-2.5 text-xs font-mono text-neutral-400">
+              <div className="flex items-center gap-2 mt-2.5 text-xs font-mono text-white">
                 <div className="flex items-center text-amber-400">
                   {[...Array(5)].map((_, i) => (
                     <Star
@@ -284,22 +284,22 @@ export default function ProductDetailPage({
                     />
                   ))}
                 </div>
-                <span>
+                <span className="text-white font-medium">
                   {product.rating} ({product.reviewCount} reviews)
                 </span>
               </div>
             </div>
 
             {/* Description */}
-            <p className="text-neutral-300 text-sm sm:text-base font-light leading-relaxed">
+            <p className="text-white text-sm sm:text-base font-normal leading-relaxed">
               {product.description}
             </p>
 
             {/* Colors */}
             <div className="space-y-2.5 pt-2 border-t border-neutral-900">
               <div className="flex items-center justify-between text-xs font-mono uppercase">
-                <span className="text-neutral-400">Colorway:</span>
-                <span className="text-white font-medium">{currentColor}</span>
+                <span className="text-white font-medium">Colorway:</span>
+                <span className="text-white font-bold">{currentColor}</span>
               </div>
               <div className="flex items-center gap-2.5">
                 {product.colors.map((c) => (
@@ -321,11 +321,11 @@ export default function ProductDetailPage({
             {/* Sizes */}
             <div className="space-y-2.5 pt-2 border-t border-neutral-900">
               <div className="flex items-center justify-between text-xs font-mono uppercase">
-                <span className="text-neutral-400">Select Size:</span>
+                <span className="text-white font-medium">Select Size:</span>
                 <button
                   type="button"
                   onClick={() => setIsSizeGuideOpen(true)}
-                  className="text-neutral-300 hover:text-white flex items-center gap-1 underline underline-offset-2"
+                  className="text-white hover:text-neutral-200 flex items-center gap-1 underline underline-offset-2"
                 >
                   <Ruler className="w-3.5 h-3.5" />
                   <span>Size Guide</span>
@@ -341,7 +341,7 @@ export default function ProductDetailPage({
                     className={`px-4 py-2 text-xs font-mono tracking-wider uppercase rounded transition-all ${
                       currentSize === sz
                         ? "bg-white text-black font-bold ring-2 ring-white/30"
-                        : "bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-600"
+                        : "bg-neutral-900 border border-neutral-800 text-white hover:text-white hover:border-white"
                     }`}
                   >
                     {sz}
@@ -505,18 +505,18 @@ export default function ProductDetailPage({
             )}
 
             {/* Trust Badges */}
-            <div className="grid grid-cols-3 gap-2 pt-4 border-t border-neutral-900 text-center text-[11px] font-mono text-neutral-400">
+            <div className="grid grid-cols-3 gap-2 pt-4 border-t border-neutral-900 text-center text-[11px] font-mono text-white">
               <div className="p-2 bg-neutral-900/50 rounded border border-neutral-800/60 flex flex-col items-center gap-1">
-                <Truck className="w-4 h-4 text-neutral-300" />
-                <span>Fast Nepal Delivery</span>
+                <Truck className="w-4 h-4 text-white" />
+                <span className="text-white font-medium">Fast Nepal Delivery</span>
               </div>
               <div className="p-2 bg-neutral-900/50 rounded border border-neutral-800/60 flex flex-col items-center gap-1">
-                <RotateCcw className="w-4 h-4 text-neutral-300" />
-                <span>7-Day Exchange</span>
+                <RotateCcw className="w-4 h-4 text-white" />
+                <span className="text-white font-medium">7-Day Exchange</span>
               </div>
               <div className="p-2 bg-neutral-900/50 rounded border border-neutral-800/60 flex flex-col items-center gap-1">
-                <Shield className="w-4 h-4 text-neutral-300" />
-                <span>100% Genuine Cotton</span>
+                <Shield className="w-4 h-4 text-white" />
+                <span className="text-white font-medium">100% Genuine Cotton</span>
               </div>
             </div>
 
@@ -530,25 +530,25 @@ export default function ProductDetailPage({
                       activeAccordion === "fabric" ? null : "fabric",
                     )
                   }
-                  className="w-full py-3 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-neutral-300 hover:text-white"
+                  className="w-full py-3 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-white hover:text-neutral-200"
                 >
-                  <span>Materials & Construction</span>
+                  <span className="font-semibold text-white">Materials & Construction</span>
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
+                    className={`w-4 h-4 transition-transform text-white ${
                       activeAccordion === "fabric" ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {activeAccordion === "fabric" && (
-                  <div className="pb-4 space-y-2 text-xs font-mono text-neutral-400">
+                  <div className="pb-4 space-y-2 text-xs font-mono text-white">
                     <p>
-                      <strong className="text-white">Fabric:</strong>{" "}
+                      <strong className="text-white font-bold">Fabric:</strong>{" "}
                       {product.fabric}
                     </p>
                     <p>
-                      <strong className="text-white">Fit:</strong> {product.fit}
+                      <strong className="text-white font-bold">Fit:</strong> {product.fit}
                     </p>
-                    <ul className="list-disc pl-4 space-y-1 pt-1 text-neutral-400">
+                    <ul className="list-disc pl-4 space-y-1 pt-1 text-white">
                       {product.features.map((f, i) => (
                         <li key={i}>{f}</li>
                       ))}
@@ -565,25 +565,25 @@ export default function ProductDetailPage({
                       activeAccordion === "shipping" ? null : "shipping",
                     )
                   }
-                  className="w-full py-3 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-neutral-300 hover:text-white"
+                  className="w-full py-3 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-white hover:text-neutral-200"
                 >
-                  <span>Shipping & Delivery (Nepal)</span>
+                  <span className="font-semibold text-white">Shipping & Delivery (Nepal)</span>
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
+                    className={`w-4 h-4 transition-transform text-white ${
                       activeAccordion === "shipping" ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {activeAccordion === "shipping" && (
-                  <div className="pb-4 space-y-2 text-xs font-mono text-neutral-400">
+                  <div className="pb-4 space-y-2 text-xs font-mono text-white">
                     <p>
                       •{" "}
-                      <strong className="text-white">Kathmandu Valley:</strong>{" "}
+                      <strong className="text-white font-bold">Kathmandu Valley:</strong>{" "}
                       Same-day or next-day delivery (Rs. 100 / Free over Rs.
                       3,000).
                     </p>
                     <p>
-                      • <strong className="text-white">Outside Valley:</strong>{" "}
+                      • <strong className="text-white font-bold">Outside Valley:</strong>{" "}
                       2 to 3 business days via Nepal Express Courier (Pokhara,
                       Butwal, Biratnagar, Narayangarh, Dharan, etc.).
                     </p>
@@ -603,17 +603,17 @@ export default function ProductDetailPage({
                       activeAccordion === "care" ? null : "care",
                     )
                   }
-                  className="w-full py-3 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-neutral-300 hover:text-white"
+                  className="w-full py-3 flex items-center justify-between font-mono text-xs uppercase tracking-wider text-white hover:text-neutral-200"
                 >
-                  <span>Care Instructions</span>
+                  <span className="font-semibold text-white">Care Instructions</span>
                   <ChevronDown
-                    className={`w-4 h-4 transition-transform ${
+                    className={`w-4 h-4 transition-transform text-white ${
                       activeAccordion === "care" ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {activeAccordion === "care" && (
-                  <div className="pb-4 space-y-1.5 text-xs font-mono text-neutral-400">
+                  <div className="pb-4 space-y-1.5 text-xs font-mono text-white">
                     {product.care.map((c, i) => (
                       <p key={i}>• {c}</p>
                     ))}
@@ -785,7 +785,7 @@ export default function ProductDetailPage({
               </button>
             </div>
 
-            <p className="text-xs text-neutral-300 font-light">
+            <p className="text-xs text-white font-normal">
               All our streetwear pieces are cut with an intentional boxy
               oversized drop-shoulder fit. If you prefer a tailored fit, we
               recommend ordering one size down.
@@ -793,7 +793,7 @@ export default function ProductDetailPage({
 
             <div className="overflow-x-auto">
               <table className="w-full text-xs font-mono text-left border border-neutral-800">
-                <thead className="bg-neutral-950 text-neutral-400">
+                <thead className="bg-neutral-950 text-neutral-300">
                   <tr>
                     <th className="p-2.5 border-b border-neutral-800">Size</th>
                     <th className="p-2.5 border-b border-neutral-800">
@@ -807,7 +807,7 @@ export default function ProductDetailPage({
                     </th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-neutral-800/60 text-neutral-300">
+                <tbody className="divide-y divide-neutral-800/60 text-white">
                   <tr>
                     <td className="p-2.5 font-bold">S</td>
                     <td className="p-2.5">44&quot;</td>
