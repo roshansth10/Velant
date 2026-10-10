@@ -13,9 +13,9 @@ export default function AboutPage() {
   const cityImage = '/images/nepal_model_female_street.jpg';
 
   return (
-    <div className="pt-24 sm:pt-28 pb-24 bg-[#0a0a0a] text-white min-h-screen">
+    <div className="pb-24 bg-[#0a0a0a] text-white min-h-screen">
       {/* Hero Banner */}
-      <div className="relative w-full h-[520px] sm:h-[600px] flex items-center overflow-hidden">
+      <div className="relative w-full h-[540px] sm:h-[620px] flex items-center overflow-hidden pt-20 sm:pt-24">
         <div className="absolute inset-0 z-0">
           <Image
             src={heroImage}

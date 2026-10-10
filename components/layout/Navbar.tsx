@@ -23,17 +23,11 @@ export function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const isDarkHeroPage = pathname === '/' || pathname.startsWith('/journal');
-
   return (
     <>
       <header
-        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 ${
-          isScrolled
-            ? 'bg-black/90 backdrop-blur-md border-b border-neutral-800/80 py-3.5 shadow-xl text-white'
-            : isDarkHeroPage
-            ? 'bg-gradient-to-b from-black/80 via-black/30 to-transparent py-5 text-white'
-            : 'bg-white/95 backdrop-blur-md border-b border-neutral-200 py-4 text-black'
+        className={`fixed top-0 inset-x-0 z-40 transition-all duration-300 bg-black/90 backdrop-blur-md border-b border-neutral-800/80 text-white shadow-xl ${
+          isScrolled ? 'py-3.5' : 'py-4'
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
