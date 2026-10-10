@@ -37,12 +37,12 @@ export function MobileMenu({ isOpen, onClose }: MobileMenuProps) {
       </div>
 
       {/* Main Navigation Links matching reference */}
-      <div className="flex-1 py-10 flex flex-col justify-center space-y-6">
+      <div className="flex-1 pt-4 pb-6 overflow-y-auto space-y-4">
         <div>
           <Link
             href="/"
             onClick={onClose}
-            className="text-2xl font-light tracking-wide hover:text-neutral-400 transition-colors block py-2"
+            className="text-2xl font-light tracking-wide hover:text-neutral-400 transition-colors block py-1.5"
           >
             Home
           </Link>
